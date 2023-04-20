@@ -1,1 +1,1 @@
-export {default} from "./movieAPI";
+export * from './movieAPI';
