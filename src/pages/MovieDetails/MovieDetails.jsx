@@ -33,15 +33,10 @@ const MovieDetails = () => {
   const location = useLocation();
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
-  const [backLinkHref, setBackLinkHref] = useState(null);
+  
 
-  useEffect(() => {
-    if (backLinkHref) {
-      return;
-    }
-    const state = location.state?.from ?? '/goit-react-hw-05-movies';
-    setBackLinkHref(state);
-  }, [backLinkHref, location.state]);
+  const backLinkHref = location.state?.from ?? '/goit-react-hw-05-movies';
+  
 
   useEffect(() => {
     const fetchMovieById = async () => {
@@ -89,19 +84,11 @@ const MovieDetails = () => {
             <HiArrowSmLeft /> Go back
           </GoBackLink>
           <MovieCard>
-            {poster_path ? (
               <img
-                src={`https://image.tmdb.org/t/p/w300${poster_path}`}
+                src={poster_path ? (`https://image.tmdb.org/t/p/w300${poster_path}`) : ("https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg")}
                 alt={original_title}
                 width="200"
               />
-            ) : (
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg"
-                width="200"
-                alt={original_title}
-              ></img>
-            )}
             <MovieInfo>
               <h2>{original_title}</h2>
               <p>User score: {vote_average}</p>

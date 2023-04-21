@@ -3,8 +3,8 @@ import { useSearchParams, useLocation } from 'react-router-dom';
 import { searchMovie } from 'services/movieAPI';
 import MovieList from 'components/MovieList';
 import { Bars } from 'react-loader-spinner';
-import { Input } from './Movies.styled';
 import Error from 'components/Error';
+import Form from 'components/Form';
 
 const Movies = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -46,12 +46,8 @@ const Movies = () => {
 
   return (
     <main>
-      <h2>Search movies</h2>
-      <form onSubmit={handleSubmit}>
-        <Input name="query" type="text"></Input>
-        <button type="submit">Search</button>
-      </form>
-
+      <Form 
+      searchForm={handleSubmit}/>
       {isLoading && (
         <Bars
           height="40"

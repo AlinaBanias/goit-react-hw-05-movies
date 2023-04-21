@@ -1,17 +1,8 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { useMatch } from 'react-router-dom';
-import styled from '@emotion/styled';
 
-const CustomLinkStyled = styled(Link)`
-  color: ${props =>
-    props.much || props.muchpath.pathnameBase === props.to ? 'blue' : 'black'};
-  text-decoration: none;
-  :hover {
-    color: purple;
-  }
-`;
+import { useMatch } from 'react-router-dom';
+import { CustomLinkStyled } from './CustomLink.styled';
 
 const CustomLink = ({ to, children }) => {
   const much = useMatch(to);
