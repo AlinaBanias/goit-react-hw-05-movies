@@ -1,9 +1,12 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 
 import MovieItem from 'components/MovieItem';
 
-const MovieList = ({ movies, location }) => {
+const location =  useLocation;
+
+const MovieList = ({ movies }) => {
   return (
     <ul>
       {movies.map(({ id, title }) => (
