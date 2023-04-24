@@ -1,7 +1,5 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-
-import { useMatch } from 'react-router-dom';
 import { CustomLinkStyled } from './CustomLink.styled';
 
 const CustomLink = ({ to, children }) => {
