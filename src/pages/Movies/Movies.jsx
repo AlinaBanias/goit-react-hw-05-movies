@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useSearchParams, useLocation } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import { searchMovie } from 'services/movieAPI';
 import MovieList from 'components/MovieList';
 import Loader from "components/Loader";
@@ -12,7 +12,6 @@ const Movies = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
 
-  const location = useLocation();
 
   const handleSubmit = e => {
     e.preventDefault();

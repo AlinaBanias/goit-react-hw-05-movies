@@ -3,11 +3,12 @@ import { Item, ImageWrapper } from './CastItem.styled';
 import PropTypes from 'prop-types';
 
 const CastItem = ({ profile_path, name, character }) => {
+    const defaultImg = "https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg";
   return (
     <Item>
       <ImageWrapper>
           <img
-            src={profile_path ? (`https://image.tmdb.org/t/p/w300${profile_path}`) : ("https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg")}
+            src={profile_path ? (`https://image.tmdb.org/t/p/w300${profile_path}`) : defaultImg}
             alt={name}
             width="150"
           />

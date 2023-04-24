@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { fetchTrendingMovie } from 'services';
-import { useLocation } from 'react-router-dom';
 
 import Loader from 'components/Loader';                                                                                                                                                  
 import MovieList from 'components/MovieList';
@@ -8,7 +7,6 @@ import Error from 'components/Error';
 
 const Home = () => {
   const [trendingMovies, setTrendingMovies] = useState([]);
-  const location = useLocation();
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
 
@@ -36,7 +34,7 @@ const Home = () => {
       {isLoading ? (
         <Loader isLoading={isLoading}/>
       ) : (
-        <MovieList movies={trendingMovies} state={{ from: location }} />
+        <MovieList movies={trendingMovies} />
       )}
       {errorMessage && <Error errorMessage={errorMessage} />}
     </main>

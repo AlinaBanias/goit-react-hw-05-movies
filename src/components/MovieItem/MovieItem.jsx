@@ -1,11 +1,13 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
-const MovieItem = ({ id, title, state }) => {
+const location = useLocation;
+
+const MovieItem = ({ id, title }) => {
   return (
     <li>
-      <Link to={`/goit-react-hw-05-movies/movies/${id}`} state={state}>
+      <Link to={`/movies/${id}`} state={{ state : location}}>
         {title}
       </Link>
     </li>
