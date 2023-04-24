@@ -5,9 +5,6 @@ import { useMatch } from 'react-router-dom';
 import { CustomLinkStyled } from './CustomLink.styled';
 
 const CustomLink = ({ to, children }) => {
-  const much = useMatch(to);
-  const muchPath = useMatch('/goit-react-hw-05-movies/movies/*') ?? '';
-
   return (
     <CustomLinkStyled to={to}>
       {children}

@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
 import { useParams, Outlet, Link, useLocation } from 'react-router-dom';
 import { getMovieById } from 'services';
-import { Bars } from 'react-loader-spinner';
+
 import { MovieCard, MovieInfo, GoBackLink } from './MovieDetails.styled';
 import { HiArrowSmLeft } from 'react-icons/hi';
 import { Suspense } from 'react';
-
+import Loader from 'components/Loader';
 import Error from 'components/Error';
 
 
@@ -51,15 +51,7 @@ const MovieDetails = () => {
   return (
     <>
       {isLoading && (
-        <Bars
-          height="40"
-          width="40"
-          color="#280232"
-          ariaLabel="bars-loading"
-          wrapperStyle={{}}
-          wrapperClass=""
-          visible={true}
-        />
+       <Loader isLoading={isLoading}/>
       )}
       {Object.keys(movieInfo).length > 0 && (
         <>
@@ -95,15 +87,7 @@ const MovieDetails = () => {
           {errorMessage && <Error errorMessage={errorMessage} />}
           <Suspense
             fallback={
-              <Bars
-                height="40"
-                width="40"
-                color="#280232"
-                ariaLabel="bars-loading"
-                wrapperStyle={{}}
-                wrapperClass=""
-                visible={true}
-              />
+             <Loader isLoading={isLoading}/>
             }
           >
             <Outlet />
