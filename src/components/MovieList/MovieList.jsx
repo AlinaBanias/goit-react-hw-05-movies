@@ -3,11 +3,11 @@ import React from 'react';
 
 import MovieItem from 'components/MovieItem';
 
-const MovieList = ({ movies, state }) => {
+const MovieList = ({ movies, location }) => {
   return (
     <ul>
       {movies.map(({ id, title }) => (
-        <MovieItem key={id} id={id} title={title} state={state} />
+        <MovieItem key={id} id={id} title={title} state={{ from: location }} />
       ))}
     </ul>
   );

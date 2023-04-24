@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useSearchParams, useLocation } from 'react-router-dom';
 import { searchMovie } from 'services/movieAPI';
 import MovieList from 'components/MovieList';
-import { Bars } from 'react-loader-spinner';
+import Loader from "components/Loader";
 import Error from 'components/Error';
 import Form from 'components/Form';
 
@@ -49,18 +49,12 @@ const Movies = () => {
       <Form 
       searchForm={handleSubmit}/>
       {isLoading && (
-        <Bars
-          height="40"
-          width="40"
-          color="#280232"
-          ariaLabel="bars-loading"
-          wrapperStyle={{}}
-          wrapperClass=""
-          visible={true}
-        />
+       <Loader 
+       isLoading={isLoading}
+       />
       )}
       {movies.length > 0 && (
-        <MovieList movies={movies} state={{ from: location }} />
+        <MovieList movies={movies} />
       )}
       {errorMessage && <Error />}
     </main>
