@@ -20,5 +20,5 @@ return (
  export default Loader;
 
 Loader.propTypes ={
-    loading: PropTypes.bool.isRequired,
+    isLoading: PropTypes.bool.isRequired,
 }
