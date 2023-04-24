@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getMovieReviews } from 'services/movieAPI';
-import { Bars } from 'react-loader-spinner';
 import Error from 'components/Error';
 
 import ReviewsItem from 'components/ReviewsItem';
+import Loader from 'components/Loader';
 
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
@@ -31,14 +31,8 @@ const Reviews = () => {
   return (
     <>
       {isLoading && (
-        <Bars
-          height="40"
-          width="40"
-          color="#280232"
-          ariaLabel="bars-loading"
-          wrapperStyle={{}}
-          wrapperClass=""
-          visible={true}
+        <Loader
+        isLoading={isLoading}
         />
       )}
       {reviews.length > 0 ? (

@@ -47,6 +47,7 @@ const MovieDetails = () => {
 
   const { genres, vote_average, overview, original_title, poster_path } =
     movieInfo;
+    const defaultImg = "https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg";
 
   return (
     <>
@@ -60,7 +61,7 @@ const MovieDetails = () => {
           </GoBackLink>
           <MovieCard>
               <img
-                src={poster_path ? (`https://image.tmdb.org/t/p/w300${poster_path}`) : ("https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg")}
+                src={poster_path ? (`https://image.tmdb.org/t/p/w300${poster_path}`) : defaultImg}
                 alt={original_title}
                 width="200"
               />

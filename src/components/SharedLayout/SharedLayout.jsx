@@ -11,8 +11,8 @@ const SharedLayout = () => {
     <Container>
       <Header>
         <Nav>
-          <CustomLink to="/goit-react-hw-05-movies">Home</CustomLink>
-          <CustomLink to="/goit-react-hw-05-movies/movies">Movies</CustomLink>
+          <CustomLink to="/">Home</CustomLink>
+          <CustomLink to="/movies">Movies</CustomLink>
         </Nav>
       </Header>
       <Suspense

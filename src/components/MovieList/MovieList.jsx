@@ -4,9 +4,10 @@ import { useLocation } from 'react-router-dom';
 
 import MovieItem from 'components/MovieItem';
 
-const location =  useLocation;
+
 
 const MovieList = ({ movies }) => {
+    const location =  useLocation();
   return (
     <ul>
       {movies.map(({ id, title }) => (
