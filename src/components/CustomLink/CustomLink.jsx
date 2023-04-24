@@ -9,7 +9,7 @@ const CustomLink = ({ to, children }) => {
   const muchPath = useMatch('/goit-react-hw-05-movies/movies/*') ?? '';
 
   return (
-    <CustomLinkStyled to={to} much={much} muchpath={muchPath}>
+    <CustomLinkStyled to={to}>
       {children}
     </CustomLinkStyled>
   );

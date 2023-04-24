@@ -1,31 +1,14 @@
 import { useState, useEffect } from 'react';
-import { useParams, Link, Outlet, useLocation } from 'react-router-dom';
+import { useParams, Outlet, Link, useLocation } from 'react-router-dom';
 import { getMovieById } from 'services';
 import { Bars } from 'react-loader-spinner';
-import { MovieCard, MovieInfo } from './MovieDetails.styled';
-import styled from '@emotion/styled';
+import { MovieCard, MovieInfo, GoBackLink } from './MovieDetails.styled';
 import { HiArrowSmLeft } from 'react-icons/hi';
 import { Suspense } from 'react';
 
 import Error from 'components/Error';
 
-const GoBackLink = styled(Link)`
-  display: block;
-  width: 100px;
-  padding: 5px;
-  margin-bottom: 5px;
-  text-align: center;
-  text-decoration: none;
-  color: currentColor;
-  border: 1px solid #c9c9c9;
-  border-radius: 3px;
-  :hover,
-  :focus {
-    background-color: #f7eded;
-    border-color: #0f86c8;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-  }
-`;
+
 
 const MovieDetails = () => {
   const [movieInfo, setMovieInfo] = useState([]);
@@ -35,7 +18,7 @@ const MovieDetails = () => {
   const [errorMessage, setErrorMessage] = useState('');
   
 
-  const backLinkHref = location.state?.from ?? '/goit-react-hw-05-movies';
+  const backLinkHref = location.state?.from ?? '/';
   
 
   useEffect(() => {

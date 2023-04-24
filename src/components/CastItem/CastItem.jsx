@@ -6,19 +6,11 @@ const CastItem = ({ profile_path, name, character }) => {
   return (
     <Item>
       <ImageWrapper>
-        {profile_path ? (
           <img
-            src={`https://image.tmdb.org/t/p/w300${profile_path}`}
+            src={profile_path ? (`https://image.tmdb.org/t/p/w300${profile_path}`) : ("https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg")}
             alt={name}
             width="150"
           />
-        ) : (
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg"
-            width="150"
-            alt={name}
-          ></img>
-        )}
       </ImageWrapper>
 
       <p> {name}</p>
